@@ -87,8 +87,8 @@ const Intro = () => (
     </p>
     <img src={overview} />
     <p>
-      eBPF changes this formula fundamentally. By allowing to run sandboxed
-      programs within the operating system, application developers can run eBPF
+      eBPF changes this formula fundamentally. By allowing sandboxed programs
+      to run within the operating system, application developers can run eBPF
       programs to add additional capabilities to the operating system at
       runtime. The operating system then guarantees safety and execution
       efficiency as if natively compiled with the aid of a Just-In-Time (JIT)

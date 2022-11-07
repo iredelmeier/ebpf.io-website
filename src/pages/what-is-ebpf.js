@@ -90,7 +90,7 @@ class Description extends React.Component {
     </p>
     <img src={overview} />
     <p>
-      eBPF changes this formula fundamentally. By allowing to run sandboxed programs within the operating system, application developers can run eBPF programs to add additional capabilities to the operating system at runtime. The operating system then guarantees safety and execution efficiency as if natively compiled with the aid of a Just-In-Time (JIT) compiler and verification engine. This has led to a wave of eBPF-based projects covering a wide array of use cases, including next-generation networking, observability, and security functionality.
+      eBPF changes this formula fundamentally. By allowing sandboxed programs to run within the operating system, application developers can run eBPF programs to add additional capabilities to the operating system at runtime. The operating system then guarantees safety and execution efficiency as if natively compiled with the aid of a Just-In-Time (JIT) compiler and verification engine. This has led to a wave of eBPF-based projects covering a wide array of use cases, including next-generation networking, observability, and security functionality.
     </p>
     <p>
       Today, eBPF is used extensively to drive a wide variety of use cases: Providing high-performance networking and load-balancing in modern data centers and cloud native environments, extracting fine-grained security observability data at low overhead, helping application developers trace applications, providing insights for performance troubleshooting, preventive application and container runtime security enforcement, and much more. The possibilities are endless, and the innovation that eBPF is unlocked has only just begun.
@@ -146,7 +146,7 @@ class Description extends React.Component {
             projects like <a href="/projects/#cilium">Cilium</a>,{" "}
             <a href="/projects/#bcc">bcc</a>, or{" "}
             <a href="/projects/#bpftrace">bpftrace</a> which provide an
-            abstraction on top of eBPF and do not require to write programs
+            abstraction on top of eBPF and do not require you to write programs
             directly but instead offer the ability to specify intent-based
             definitions which are then implemented with eBPF.
           </p>
@@ -154,10 +154,10 @@ class Description extends React.Component {
           <p>
             If no higher-level abstraction exists, programs need to be written
             directly. The Linux kernel expects eBPF programs to be loaded in the
-            form of bytecode. While it is of course possible to write bytecode
-            directly, the more common development practice is to leverage a
-            compiler suite like <a href="https://llvm.org/">LLVM</a> to compile
-            pseudo-C code into eBPF bytecode.
+            form of bytecode. While it is possible to write bytecode directly,
+            the more common development practice is to leverage a compiler suite
+            like <a href="https://llvm.org/">LLVM</a> to compile pseudo-C code
+            into eBPF bytecode.
           </p>
 
           <h3>Loader & Verification Architecture</h3>
@@ -298,7 +298,7 @@ class Description extends React.Component {
             <li>
               Programs are validated to ensure they always run to completion,
               e.g. an eBPF program may never block or sit in a loop forever.
-              eBPF programs may contain so called bounded loops but the program
+              eBPF programs may contain so-called bounded loops but the program
               is only accepted if the verifier can ensure that the loop contains
               an exit condition which is guaranteed to become true.
             </li>
@@ -312,7 +312,7 @@ class Description extends React.Component {
             </li>
             <li>
               Program must have a finite complexity. The verifier will evaluate
-              all possible execution paths and must be capable of completing the
+              all possible execution paths are be capable of completing the
               analysis within the limits of the configured upper complexity
               limit.
             </li>
@@ -348,7 +348,7 @@ class Description extends React.Component {
             <li>
               <b>Constant blinding:</b> All constants in the code are blinded to
               prevent JIT spraying attacks. This prevents attackers from
-              injecting executable code as constants which in the presence of
+              injecting executable code as constants which, in the presence of
               another kernel bug, could allow an attacker to jump into the
               memory section of the eBPF program to execute code.
             </li>
@@ -393,9 +393,9 @@ class Description extends React.Component {
             standards bodies that a new HTML tag was needed, the availability of
             the necessary building blocks decoupled the pace of innovation of
             the underlying browser from the application running on top. This is
-            of course a bit oversimplified as HTML did evolve over time and
-            contributed to the success but the evolution of HTML itself would
-            not have been sufficient.
+            a bit oversimplified as HTML did evolve over time and contributed
+            to the success but the evolution of HTML itself would not have been
+            sufficient.
           </p>
 
           <p>
@@ -412,7 +412,7 @@ class Description extends React.Component {
             </li>
             <li>
               <b>Continuous Delivery:</b> Evolution of program logic must be
-              possible without requiring to constantly ship new browser
+              possible without requiring constant shipping of new browser
               versions. This was solved by providing the right low-level
               building blocks sufficient to build arbitrary logic.
             </li>
@@ -424,7 +424,7 @@ class Description extends React.Component {
           </ul>
 
           <p>
-            For all of the above, exact counter parts can be found in eBPF for
+            For all of the above, exact counterparts can be found in eBPF for
             the same reason.
           </p>
 
@@ -440,13 +440,13 @@ class Description extends React.Component {
 
           <p>
             The main purpose of the Linux kernel is to abstract the hardware or
-            virtual hardware and provide a consistent API (system calls)
-            allowing for applications to run and share the resources. In order
+            virtual hardware and provide a consistent API (system calls) that
+            allows for applications to run and share the resources. In order
             to achieve this, a wide set of subsystems and layers are maintained
             to distribute these responsibilities. Each subsystem typically
             allows for some level of configuration to account for different
             needs of users. If a desired behavior cannot be configured, a kernel
-            change is required, historically, leaving two options:
+            change is required, historically leaving two options:
           </p>
 
           <table>
